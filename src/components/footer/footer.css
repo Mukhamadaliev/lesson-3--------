@@ -1,0 +1,21 @@
+.Footer {
+    padding: 20px;
+}
+
+.Footer-left,
+.Footer-right {
+    flex: 1;
+    padding: 20px;
+}
+
+.Footer-left,
+.Footer-right {
+    margin-bottom: 20px;
+    color: #ffffff;
+    line-height: 1.5;
+    background-color: #292828;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    margin-right: 20px;
+}

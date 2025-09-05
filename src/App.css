@@ -3,10 +3,28 @@
   margin: 0;
   box-sizing: border-box;
 }
-.App{
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
-  line-height: 50px;
+
+:root {
+  --primary-color: #2563eb;
+  --color-white: white;
+  --color-black: black;
+  --color-white-black: rgb(53, 53, 53);
+  --gradient-background: linear-gradient(135deg, #1e3a8a, #2563eb, #3b82f6);
+}
+
+.max-width {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/*  body */
+
+body {
+  padding: 20px;
+}
+
+body {
+  background: var(--color-white-black);
+  min-height: 100vh;
+  width: 100%;
 }

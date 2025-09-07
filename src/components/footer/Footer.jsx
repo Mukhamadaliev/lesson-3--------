@@ -1,28 +1,22 @@
-import { useState, useEffect } from 'react';
+import React from 'react'
 import './footer.css'
 
-const Footer = () => {
-    const [post, setPost] = useState([]);
-
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts/1')
-            .then(response => response.json())
-            .then(json => setPost(json))
-    }, []);
+const Footer = ({ data }) => {
     return (
         <div>
-            <div className="max-width">
-                <div className="Footer">
-                    <div className="Footer-left">
-                        <h2>{post.title}</h2>
+            <div className="footer-grid">
+                {data.map((footer) => (
+                    <div className="footer-card" key={footer.id}>
+                        <div className="footer-icon">
+                            <h1 className='icon'>{footer.icon}</h1>
+                        </div>
+                        <h3>{footer.title}</h3>
+                        <p>{footer.body}</p>
                     </div>
-                    <div className="Footer-right">
-                        <h2>{post.title}</h2>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     )
 }
 
-export default Footer;
+export default Footer

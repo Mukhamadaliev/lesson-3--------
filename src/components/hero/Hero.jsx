@@ -1,52 +1,31 @@
-import './hero.css'
-import { useState, useEffect } from 'react';
+import React from "react";
+import './hero.css';
 
-const Hero = () => {
-    const [post, setPost] = useState([]);
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts/1')
-            .then(response => response.json())
-            .then(json => setPost(json))
-    }, []);
+const Hero = ({ data }) => {
+    const item = data.find(el => el.id === 2);
+
     return (
+        <section className="hero">
+            {item && (
+                <>
+                    <div className="div-hero-max">
+                        <div className="hero-left">
 
-        <div>
-            <div className="max-width">
+                            <h1>{item.title}</h1>
+                            <p>{item.body}</p>
+                            {item.lorem && <p>{item.lorem}</p>}
+                        </div>
+                        <div className="hero right">
 
-                <div className="div-hero">
-                    <div className="hero-left">
-                        <div key={post.id}>
-                            <div className="div">
-                                <p>{post.title}</p>
-                            </div><br />
-                            <div className="div-2">
-                                <p>{post.title}</p>
-                            </div><br />
-                            <div className="div-2">
-                                <p>{post.title}</p>
-                            </div>
+                            {item.img && <img src={item.img} alt={item.title} />}
+                            
                         </div>
                     </div>
-                    <div className="hero-right">
-                        <div key={post.id}>
-                            <div className="div">
-                                <p>{post.body}</p>
-                                <br />
-                                <hr />
-                                <br />
-                                <p>{post.body}</p>
-                                <br />
-                                <hr />
-                                <br />
-                                <p>{post.body}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+                </>
+            )}
+        </section>
+    );
+};
 
-export default Hero
+export default Hero;

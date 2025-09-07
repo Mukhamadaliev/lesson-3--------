@@ -1,15 +1,22 @@
 import './App.css';
-import About from './components/about/About';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
-import Hero from './components/hero/Hero';
+import FakeBackend from './api/fakeBackend/FakeBackend.jsx'
+import About from './components/about/About.jsx';
+import Footer from './components/footer/Footer.jsx';
+import Header from './components/header/Header.jsx';
+import Hero from './components/hero/Hero.jsx';
+
+
+
 function App() {
+
   return (
     <div className="App">
-      <Header />
-      <About />
-      <Hero />
-      <Footer />y
+      <FakeBackend>
+        <Header />
+        <Hero />
+        <About />
+        <Footer />
+      </FakeBackend>
     </div>
   );
 }

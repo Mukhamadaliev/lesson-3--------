@@ -1,72 +1,79 @@
-.div-hero {
+.hero {
+    width: 100%;
+    padding: 60px 0px; 
+    /* background-color: #f9f9f9;  */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    border-radius: var(--radius-5);
-    gap: 50px;
+    box-sizing: border-box; 
 }
 
-.hero-left .div {
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #ffffff;
-    line-height: 1.5;
-    text-align: justify;
-    width: 500px;
-    background-color: #292828;
-    padding: 10px;
-    border-radius: 10px;
+
+.div-hero-max {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    max-width: 1200px; 
+    width: 100%;
+    margin: 0 auto;
+    gap: 50px; 
+}
+
+.hero-left {
+    flex: 1; 
+    max-width: 50%; 
+}
+
+.hero-left h1 {
+    font-size: 48px; 
+    font-weight: 700; 
+    color: #2c3e50; 
+    margin-bottom: 20px; 
+    line-height: 1.2;
+}
+
+.hero-left p {
+    font-size: 18px; 
+    line-height: 1.7;  
+    color: #555; 
+    margin-bottom: 15px;
+}
+
+
+.hero.right {
     flex: 1;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
 }
 
-.hero-left .div-2 {
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #ffffff;
-    line-height: 1.5;
-    text-align: justify;
-    width: 500px;
-    background-color: #292828;
-    padding: 10px;
-    border-radius: 10px;
-    flex: 1;
-    padding: 20px;
+.hero.right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
 }
 
-.hero-right {
-    min-height: 200px;
-}
 
-.hero-right .div {
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #ffffff;
-    line-height: 1.5;
-    text-align: justify;
-    width: 90%;
-    background-color: #292828;
-    padding: 10px;
-    border-radius: 10px;
-    flex: 1;
-    padding: 20px;
-}
+@media (max-width: 800px) {
+    .div-hero-max {
+        padding: 0 10px;
+        flex-direction: column-reverse; 
+        text-align: center; 
+    }
 
-.hero-right .div-2 {
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #ffffff;
-    line-height: 1.5;
-    text-align: justify;
-    width: 90%;
-    background-color: #292828;
-    padding: 10px;
-    border-radius: 10px;
-    flex: 1;
-    padding: 20px;
+    .hero-left,
+    .hero.right {
+        padding: 0 20px;
+        max-width: 100%; 
+    }
+
+    .hero-left h1 {
+        font-size: 36px; 
+    }
+
+    .hero-left p {
+        font-size: 16px;
+    }
 }

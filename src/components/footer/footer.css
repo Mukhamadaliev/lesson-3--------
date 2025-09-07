@@ -1,21 +1,61 @@
-.Footer {
-    padding: 20px;
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
 }
 
-.Footer-left,
-.Footer-right {
-    flex: 1;
-    padding: 20px;
+.footer-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px 20px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.Footer-left,
-.Footer-right {
-    margin-bottom: 20px;
-    color: #ffffff;
-    line-height: 1.5;
-    background-color: #292828;
-    padding: 20px;
-    border-radius: 10px;
-    flex: 1;
-    margin-right: 20px;
+.footer-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-icon {
+  font-size: 45px;
+  color: black; 
+  margin-bottom: 15px;
+}
+
+.footer-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Responsiv dizayn */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 40px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    padding: 0 10px;
+    grid-template-columns: 1fr;
+  }
+
+  .footer-card {
+    padding: 20px 15px;
+  }
 }
